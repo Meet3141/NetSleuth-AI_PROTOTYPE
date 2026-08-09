@@ -8,6 +8,9 @@ import { FindingDetail } from './pages/FindingDetail';
 import { Alerts } from './pages/Alerts';
 import { ThreatIntelligence } from './pages/ThreatIntelligence';
 import { Correlation } from './pages/Correlation';
+import { Investigations } from './pages/Investigations';
+import { InvestigationWorkspace } from './pages/InvestigationWorkspace';
+import { Evidence } from './pages/Evidence';
 import { PlaceholderPage } from './pages/PlaceholderPage';
 
 function App() {
@@ -31,9 +34,9 @@ function App() {
           <Route path="/correlation" element={<Correlation />} />
           
           {/* Investigation */}
-          <Route path="/investigations" element={<PlaceholderPage title="Investigations" />} />
-          <Route path="/investigations/:id" element={<PlaceholderPage title="Investigation Details" />} />
-          <Route path="/evidence" element={<PlaceholderPage title="Evidence" />} />
+          <Route path="/investigations" element={<Investigations />} />
+          <Route path="/investigations/:id" element={<InvestigationWorkspace />} />
+          <Route path="/evidence" element={<Evidence />} />
           <Route path="/mitre" element={<PlaceholderPage title="MITRE ATT&CK" />} />
           <Route path="/reports" element={<PlaceholderPage title="Reports" />} />
           

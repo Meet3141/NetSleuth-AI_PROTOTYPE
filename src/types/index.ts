@@ -186,3 +186,70 @@ export interface AttackChainStep {
   id: string;
   label: string;
 }
+
+// --- Step 4 Types ---
+
+export interface InvestigationNote {
+  id: string;
+  timestamp: string;
+  author: string;
+  content: string;
+}
+
+export interface InvestigationAssessment {
+  facts: string[];
+  inferences: string[];
+  hypotheses: string[];
+}
+
+export interface InvestigationCase {
+  id: string;
+  title: string;
+  description: string;
+  severity: Severity;
+  status: string;
+  created: string;
+  lastUpdated: string;
+  investigator: string;
+  tags: string[];
+  primaryHost?: string;
+  primaryDestination?: string;
+  relatedFindingsCount: number;
+  relatedSessionsCount: number;
+  relatedArtifactsCount: number;
+  relatedDomainsCount: number;
+  timeRange: string;
+  risk: string;
+  notes: InvestigationNote[];
+  assessment: InvestigationAssessment;
+}
+
+export interface ChainOfCustodyEvent {
+  id: string;
+  timestamp: string;
+  action: string;
+  evidenceId: string;
+  user: string;
+  status: string;
+}
+
+export interface EvidenceItem {
+  id: string;
+  type: string;
+  source: string;
+  relatedCaseId: string;
+  relatedFindingId?: string;
+  timestamp: string;
+  description: string;
+  originalReference: string;
+  hash: string;
+  verificationStatus: 'Pending' | 'Verified' | 'Failed';
+  chainOfCustody: ChainOfCustodyEvent[];
+}
+
+export interface EvidencePackage {
+  id: string;
+  caseId: string;
+  status: string;
+  items: EvidenceItem[];
+}
