@@ -59,7 +59,7 @@ export function ForensicPipeline() {
       ))}
 
       {/* Pipeline cards — clean vertical flow */}
-      <div className="relative z-10 flex flex-col gap-2 p-6 lg:p-8">
+      <div className="relative z-10 flex flex-col gap-1.5 p-4 lg:p-6">
         {WORKFLOW_STAGES.map((stage, index) => (
           <PipelineStage
             key={index}

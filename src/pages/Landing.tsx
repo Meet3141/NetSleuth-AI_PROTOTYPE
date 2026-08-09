@@ -76,14 +76,14 @@ export function Landing() {
       </nav>
 
       {/* ===================== HERO SECTION ===================== */}
-      <section id="workflow" className="relative py-16 lg:py-24 overflow-hidden">
+      <section id="workflow" className="relative py-8 lg:py-12 overflow-hidden">
         {/* Subtle background glow */}
         <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-cyan-600/8 rounded-full blur-[120px] pointer-events-none z-0"></div>
         
         <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start relative z-10">
           
           {/* Left Column: Hero Content */}
-          <div className="flex flex-col justify-center space-y-8 pt-4 lg:pt-12">
+          <div className="flex flex-col justify-center space-y-6 pt-2 lg:pt-4">
             <div className="inline-block border border-cyan-900/50 bg-cyan-950/30 px-3 py-1 rounded text-cyan-400 text-xs font-bold uppercase tracking-widest w-max">
               AI-Powered Network & Packet Forensics
             </div>
