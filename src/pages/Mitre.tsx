@@ -22,7 +22,7 @@ export function Mitre() {
       />
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
         <div className="glass-panel p-4 text-center border-purple-500/20 relative">
           <div className="absolute top-2 right-2 text-[8px] bg-purple-900/30 text-purple-400 border border-purple-800 px-1 rounded uppercase tracking-widest">Demo</div>
           <div className="text-3xl font-bold text-slate-200 mb-1">2</div>

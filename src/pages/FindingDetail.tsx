@@ -59,7 +59,7 @@ export function FindingDetail() {
             <h3 className="text-lg font-semibold text-slate-200 mb-4">Forensic Traceability</h3>
             <div className="text-sm text-slate-400 mb-4">This finding was correlated from the following extracted network elements:</div>
             
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2 border border-slate-800 rounded p-4">
                 <span className="text-xs uppercase tracking-wider font-semibold text-slate-500">Related Sessions</span>
                 {finding.relatedSessions?.length ? finding.relatedSessions.map(s => (

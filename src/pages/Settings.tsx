@@ -32,14 +32,14 @@ export function Settings() {
           <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider mb-4 border-b border-slate-800 pb-2 flex items-center gap-2">
             <SettingsIcon size={16} className="text-cyan-500" /> Demo Management
           </h3>
-          <div className="bg-navy-900/50 p-4 rounded border border-slate-800 flex justify-between items-center">
+          <div className="bg-navy-900/50 p-4 rounded border border-slate-800 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
             <div>
               <div className="text-sm font-medium text-slate-200">Reset Demo State</div>
               <div className="text-xs text-slate-400 mt-1">Restore the prototype data to its original un-investigated state. Useful for restarting a presentation.</div>
             </div>
             <button 
               onClick={handleReset}
-              className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-red-400 hover:text-red-300 bg-red-950/30 hover:bg-red-900/50 border border-red-900/50 rounded transition-colors uppercase tracking-widest shrink-0"
+              className="flex items-center justify-center gap-2 px-4 py-2 text-xs font-bold text-red-400 hover:text-red-300 bg-red-950/30 hover:bg-red-900/50 border border-red-900/50 rounded transition-colors uppercase tracking-widest shrink-0 w-full sm:w-auto"
             >
               <RotateCcw size={14} /> Reset Demo
             </button>

@@ -42,21 +42,21 @@ export function InvestigationWorkspace() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-6rem)] max-w-[1600px] mx-auto pb-6 space-y-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <button onClick={() => navigate('/investigations')} className="text-slate-500 hover:text-cyan-400 transition-colors p-1 bg-navy-900 rounded">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex items-center gap-3 min-w-0">
+          <button onClick={() => navigate('/investigations')} className="text-slate-500 hover:text-cyan-400 transition-colors p-1 bg-navy-900 rounded shrink-0">
             <ArrowLeft size={16} />
           </button>
-          <div>
-            <h1 className="text-xl font-bold text-slate-100">{invCase.title}</h1>
-            <div className="flex items-center gap-3 text-sm text-slate-400 mt-1">
+          <div className="min-w-0">
+            <h1 className="text-lg sm:text-xl font-bold text-slate-100 truncate">{invCase.title}</h1>
+            <div className="flex items-center gap-3 text-sm text-slate-400 mt-1 flex-wrap">
               <span className="font-mono text-cyan-400">{invCase.id}</span>
               <span>•</span>
               <span>Created: {invCase.created}</span>
             </div>
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 shrink-0">
           <button className="px-3 py-1.5 text-xs font-medium text-slate-300 bg-navy-800 hover:bg-navy-700 border border-slate-700 rounded transition-colors">
             Export Case
           </button>
@@ -66,7 +66,7 @@ export function InvestigationWorkspace() {
         </div>
       </div>
 
-      {/* 3 Column Layout */}
+      {/* 3 Column Layout — stacks on mobile */}
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-4 min-h-0">
         
         {/* LEFT: Context */}
@@ -135,7 +135,7 @@ export function InvestigationWorkspace() {
         {/* CENTER: Timeline & Attack Reconstruction */}
         <div className="lg:col-span-6 flex flex-col gap-4 overflow-y-auto pr-1 scrollbar-hide">
           {/* Summary */}
-          <div className="glass-panel p-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center divide-x divide-slate-800">
+          <div className="glass-panel p-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800">
             <div>
               <div className="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Primary Host</div>
               <div className="font-mono text-sm text-cyan-400 hover:underline cursor-pointer">{invCase.primaryHost || 'N/A'}</div>

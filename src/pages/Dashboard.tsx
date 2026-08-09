@@ -68,14 +68,14 @@ export function Dashboard() {
 
   return (
     <div className="space-y-6 pb-6">
-      <div className="flex justify-between items-start">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
         <PageHeader 
           title="Network Forensics Overview" 
           subtitle="Monitor, investigate and preserve network evidence."
         />
         <button 
           onClick={() => navigate('/input')}
-          className="flex items-center gap-2 text-sm font-bold text-cyan-950 bg-cyan-500 hover:bg-cyan-400 px-4 py-2 rounded transition-colors shadow-[0_0_15px_rgba(6,182,212,0.3)] mt-2 uppercase tracking-wider"
+          className="flex items-center justify-center gap-2 text-sm font-bold text-cyan-950 bg-cyan-500 hover:bg-cyan-400 px-4 py-2 rounded transition-colors shadow-[0_0_15px_rgba(6,182,212,0.3)] sm:mt-2 uppercase tracking-wider w-full sm:w-auto"
         >
           Run Demo Investigation <ArrowRight size={16} />
         </button>
@@ -119,10 +119,11 @@ export function Dashboard() {
         />
       </div>
 
-      {/* Charts Row */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[300px]">
+      {/* Charts Row 1 */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <ChartCard title="Network Traffic Volume" className="lg:col-span-2">
-          <ResponsiveContainer width="100%" height="100%">
+          <div className="h-[200px] md:h-[250px]">
+            <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={trafficData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
               <defs>
                 <linearGradient id="colorVolume" x1="0" y1="0" x2="0" y2="1">
@@ -139,11 +140,13 @@ export function Dashboard() {
               />
               <Area type="monotone" dataKey="volume" stroke="#06b6d4" strokeWidth={2} fillOpacity={1} fill="url(#colorVolume)" />
             </AreaChart>
-          </ResponsiveContainer>
+            </ResponsiveContainer>
+          </div>
         </ChartCard>
 
         <ChartCard title="Demo Protocol Distribution">
-          <ResponsiveContainer width="100%" height="100%">
+          <div className="h-[200px] md:h-[250px]">
+            <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={protocols}
@@ -163,7 +166,8 @@ export function Dashboard() {
                 contentStyle={{ backgroundColor: '#0f1629', borderColor: '#1e293b', color: '#cbd5e1' }}
               />
             </PieChart>
-          </ResponsiveContainer>
+            </ResponsiveContainer>
+          </div>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-4">
             <div className="text-center">
               <span className="text-2xl font-bold text-slate-200">TCP</span>
@@ -173,9 +177,10 @@ export function Dashboard() {
         </ChartCard>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[300px]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <ChartCard title="Detection Activity" className="lg:col-span-2">
-          <ResponsiveContainer width="100%" height="100%">
+          <div className="h-[200px] md:h-[250px]">
+            <ResponsiveContainer width="100%" height="100%">
             <BarChart data={detectionTrends} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
               <XAxis dataKey="time" stroke="#475569" fontSize={12} tickLine={false} axisLine={false} />
@@ -188,7 +193,8 @@ export function Dashboard() {
               <Bar dataKey="suspicious" stackId="a" fill="#f59e0b" />
               <Bar dataKey="highRisk" stackId="a" fill="#ef4444" />
             </BarChart>
-          </ResponsiveContainer>
+            </ResponsiveContainer>
+          </div>
         </ChartCard>
         
         {/* Active Investigation Panel */}

@@ -99,7 +99,7 @@ export function Correlation() {
   ];
 
   return (
-    <div className="space-y-4 h-[calc(100vh-6rem)] flex flex-col max-w-[1600px] mx-auto">
+    <div className="space-y-4 pb-6 flex flex-col max-w-[1600px] mx-auto">
       <PageHeader 
         title="Correlation Engine" 
         subtitle="Connect findings, sessions, hosts, domains and artifacts into an investigation context."
@@ -107,8 +107,8 @@ export function Correlation() {
 
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-4 gap-4 min-h-0">
         
-        {/* Left Side Panel */}
-        <div className="hidden lg:flex flex-col gap-4 overflow-y-auto pr-2 scrollbar-hide">
+        {/* Left Side Panel — shown above graph on mobile */}
+        <div className="lg:col-span-1 flex flex-col gap-4 overflow-y-auto scrollbar-hide">
           <div className="glass-panel p-5">
             <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4 flex items-center gap-2">
               <Filter size={16} className="text-cyan-500" /> Correlation Types
@@ -160,8 +160,8 @@ export function Correlation() {
         </div>
 
         {/* Graph Area */}
-        <div className="lg:col-span-3 flex flex-col gap-4 min-h-0">
-          <div className="glass-panel flex-1 relative overflow-hidden">
+        <div className="col-span-full lg:col-span-3 flex flex-col gap-4">
+          <div className="glass-panel relative overflow-hidden" style={{ height: 'clamp(350px, 50vh, 600px)' }}>
             {nodes.length > 0 && (
               <ReactFlow 
                 nodes={nodes} 

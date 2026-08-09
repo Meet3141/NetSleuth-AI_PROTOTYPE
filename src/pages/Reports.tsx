@@ -44,14 +44,14 @@ export function Reports() {
 
   return (
     <div className="space-y-6 pb-6 h-[calc(100vh-6rem)] flex flex-col max-w-7xl mx-auto relative">
-      <div className="flex justify-between items-start">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
         <PageHeader 
           title="Forensic Reports" 
           subtitle="Generate structured investigation reports from correlated network evidence."
         />
         <button 
           onClick={() => setShowGenerator(true)}
-          className="flex items-center gap-2 text-sm font-medium text-cyan-950 bg-cyan-500 hover:bg-cyan-400 px-4 py-2 rounded transition-colors shadow-[0_0_15px_rgba(6,182,212,0.3)] mt-2"
+          className="flex items-center justify-center gap-2 text-sm font-medium text-cyan-950 bg-cyan-500 hover:bg-cyan-400 px-4 py-2 rounded transition-colors shadow-[0_0_15px_rgba(6,182,212,0.3)] sm:mt-2 w-full sm:w-auto"
         >
           <FilePlus size={16} /> Generate Investigation Report
         </button>
@@ -100,8 +100,8 @@ export function Reports() {
 
       {/* Generator Modal */}
       {showGenerator && (
-        <div className="absolute inset-0 bg-navy-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-navy-900 border border-slate-700 rounded-lg shadow-2xl w-full max-w-lg overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 bg-navy-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-3">
+          <div className="bg-navy-900 border border-slate-700 rounded-lg shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
             <div className="p-4 border-b border-slate-800 flex justify-between items-center bg-navy-950">
               <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider">Configure Report</h3>
               <button onClick={() => setShowGenerator(false)} className="text-slate-500 hover:text-slate-300 transition-colors">
@@ -154,9 +154,9 @@ export function Reports() {
 
       {/* Preview Modal */}
       {showPreview && (
-        <div className="absolute inset-0 bg-navy-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-navy-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-3">
           <div className="bg-navy-900 border border-slate-700 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-            <div className="p-4 border-b border-slate-800 flex justify-between items-center bg-navy-950">
+            <div className="p-4 border-b border-slate-800 flex justify-between items-center bg-navy-950 shrink-0">
               <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
                 <Eye size={16} className="text-cyan-400" /> Report Preview
               </h3>

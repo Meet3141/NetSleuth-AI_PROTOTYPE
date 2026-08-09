@@ -53,27 +53,29 @@ export function PacketIntelligence() {
         }
       />
 
-      <div className="flex border-b border-slate-800 mb-4">
-        {tabs.map(tab => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={cn(
-              "px-6 py-3 text-sm font-medium border-b-2 transition-colors flex items-center gap-2",
-              activeTab === tab.id 
-                ? "border-cyan-500 text-cyan-400 bg-cyan-500/5" 
-                : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-navy-900/50"
-            )}
-          >
-            {tab.label}
-            <span className={cn(
-              "text-xs px-2 py-0.5 rounded-full",
-              activeTab === tab.id ? "bg-cyan-500/20 text-cyan-300" : "bg-slate-800 text-slate-500"
-            )}>
-              {tab.count}
-            </span>
-          </button>
-        ))}
+      <div className="overflow-x-auto -mx-4 md:mx-0">
+        <div className="flex border-b border-slate-800 mb-4 min-w-max px-4 md:px-0">
+          {tabs.map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={cn(
+                "px-4 md:px-6 py-3 text-sm font-medium border-b-2 transition-colors flex items-center gap-2 whitespace-nowrap",
+                activeTab === tab.id 
+                  ? "border-cyan-500 text-cyan-400 bg-cyan-500/5" 
+                  : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-navy-900/50"
+              )}
+            >
+              {tab.label}
+              <span className={cn(
+                "text-xs px-2 py-0.5 rounded-full",
+                activeTab === tab.id ? "bg-cyan-500/20 text-cyan-300" : "bg-slate-800 text-slate-500"
+              )}>
+                {tab.count}
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="flex-1 overflow-hidden flex flex-col">

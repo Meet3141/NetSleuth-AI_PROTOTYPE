@@ -15,14 +15,14 @@ interface MetricCardProps {
 
 export function MetricCard({ title, value, icon, trend, className, demo = true }: MetricCardProps) {
   return (
-    <div className={cn("glass-panel p-5 relative overflow-hidden flex flex-col justify-between h-32", className)}>
+    <div className={cn("glass-panel p-4 md:p-5 relative overflow-hidden flex flex-col justify-between min-h-[7rem]", className)}>
       <div className="flex justify-between items-start">
         <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">{title}</h3>
         {icon && <div className="text-cyan-500">{icon}</div>}
       </div>
       
       <div className="mt-2 flex items-baseline gap-2">
-        <span className="text-3xl font-bold text-slate-100">{value}</span>
+        <span className="text-2xl sm:text-3xl font-bold text-slate-100">{value}</span>
         {trend && (
           <span className={cn(
             "text-xs font-medium",

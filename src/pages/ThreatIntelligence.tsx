@@ -34,7 +34,7 @@ export function ThreatIntelligence() {
           keyExtractor={i => i.indicator}
           className="flex-1 border-0"
           columns={[
-            { key: 'indicator', header: 'Indicator', className: 'font-mono text-cyan-400 font-medium' },
+            { key: 'indicator', header: 'Indicator', className: 'font-mono text-cyan-400 font-medium truncate max-w-[180px]' },
             { key: 'type', header: 'Type', className: 'text-slate-400 text-xs uppercase' },
             { key: 'reputation', header: 'Reputation', render: (val) => (
               <span className={cn(
