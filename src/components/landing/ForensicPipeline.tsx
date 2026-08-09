@@ -21,7 +21,7 @@ const PARTICLES = Array.from({ length: 25 }, (_, i) => ({
 
 export function ForensicPipeline() {
   return (
-    <div className="relative w-full border border-slate-800 bg-navy-900/20 rounded-2xl overflow-hidden">
+    <div className="relative w-full border border-slate-700/50 bg-gradient-to-b from-navy-900/40 to-navy-950/60 rounded-2xl overflow-hidden shadow-[0_24px_60px_-12px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-md">
       {/* Background grid */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
         <div

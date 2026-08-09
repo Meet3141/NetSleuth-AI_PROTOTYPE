@@ -89,7 +89,7 @@ export function Landing() {
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] text-slate-100 tracking-tight">
               From Network Traffic <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">to Forensic Intelligence.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-cyan-400 to-blue-500 pb-2">to Forensic Intelligence.</span>
             </h1>
             <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
               NetSleuth AI transforms captured network traffic into correlated findings, reconstructed activity, investigation context, and traceable forensic evidence.
@@ -139,7 +139,7 @@ export function Landing() {
       <section id="how-it-works" className="py-20 lg:py-24 relative">
         <div className="max-w-[1400px] mx-auto px-6">
           <FadeIn className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-100 mb-4">One Investigation Workflow</h2>
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-cyan-400 to-blue-500 pb-2 mb-4">One Investigation Workflow</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">From raw packets to a fully verified forensic report, all within a single unified platform.</p>
           </FadeIn>
           
@@ -152,9 +152,9 @@ export function Landing() {
               { step: '05', title: 'INVESTIGATION', desc: 'Reconstruct timelines and understand relationships between events using a dedicated workspace.' },
               { step: '06', title: 'EVIDENCE & REPORT', desc: 'Select, verify and trace supporting evidence. Generate structured, shareable forensic reports.' }
             ].map((item, i) => (
-              <FadeIn key={i} delay={i * 100} className="glass-panel p-8 border-slate-800 hover:border-cyan-900/50 transition-colors group relative overflow-hidden rounded-2xl">
-                <div className="absolute top-0 right-0 p-4 text-6xl font-black text-slate-800/20 group-hover:text-cyan-900/10 transition-colors pointer-events-none">{item.step}</div>
-                <h3 className="text-sm font-bold text-slate-200 uppercase tracking-widest mb-3 mt-4 relative z-10">{item.title}</h3>
+              <FadeIn key={i} delay={i * 100} className="glass-panel p-8 border-slate-800 hover:border-cyan-900/50 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(6,182,212,0.15)] active:scale-95 cursor-pointer transition-all duration-300 group relative overflow-hidden rounded-2xl">
+                <div className="absolute top-0 right-0 p-4 text-6xl font-black text-slate-800/20 group-hover:text-cyan-900/30 group-hover:scale-110 transition-all duration-500 pointer-events-none">{item.step}</div>
+                <h3 className="text-sm font-bold text-slate-200 uppercase tracking-widest mb-3 mt-4 relative z-10 group-hover:text-cyan-400 transition-colors">{item.title}</h3>
                 <p className="text-sm text-slate-400 leading-relaxed relative z-10">{item.desc}</p>
               </FadeIn>
             ))}
@@ -167,7 +167,7 @@ export function Landing() {
         <div className="max-w-[1400px] mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeIn>
-              <h2 className="text-3xl lg:text-5xl font-bold text-slate-100 mb-6 leading-tight">Detection is only the beginning.</h2>
+              <h2 className="text-3xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-cyan-400 to-blue-500 pb-2 mb-6 leading-tight">Detection is only the beginning.</h2>
               <p className="text-lg text-slate-400 leading-relaxed mb-8">
                 Traditional network analysis can reveal suspicious activity. NetSleuth AI extends that workflow into investigation—connecting findings to sessions, artifacts, timelines and evidence.
               </p>
@@ -202,7 +202,7 @@ export function Landing() {
       <section id="capabilities" className="py-20 lg:py-24 relative">
         <div className="max-w-[1400px] mx-auto px-6">
           <FadeIn className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-100 mb-4">Platform Capabilities</h2>
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-cyan-400 to-blue-500 pb-2 mb-4">Platform Capabilities</h2>
           </FadeIn>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -217,10 +217,10 @@ export function Landing() {
               { icon: Database, title: 'Evidence Management', desc: 'Select, hash, and package digital evidence.' },
               { icon: FileText, title: 'Forensic Reporting', desc: 'Generate structured, professional case reports.' }
             ].map((cap, i) => (
-              <FadeIn key={i} delay={i * 50} className="bg-navy-900/30 border border-slate-800 p-6 rounded-2xl flex gap-4 hover:bg-navy-800/30 hover:border-slate-700 transition-colors">
-                <div className="shrink-0 mt-1"><cap.icon size={20} className="text-cyan-500" /></div>
+              <FadeIn key={i} delay={i * 50} className="bg-navy-900/30 border border-slate-800 p-6 rounded-2xl flex gap-4 hover:bg-navy-800/50 hover:border-slate-700 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.4)] active:scale-95 cursor-pointer transition-all duration-300 group">
+                <div className="shrink-0 mt-1"><cap.icon size={20} className="text-cyan-500 group-hover:text-cyan-400 group-hover:scale-110 transition-transform" /></div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-200 uppercase tracking-widest mb-1">{cap.title}</h4>
+                  <h4 className="text-sm font-bold text-slate-200 uppercase tracking-widest mb-1 group-hover:text-cyan-100 transition-colors">{cap.title}</h4>
                   <p className="text-xs text-slate-400 leading-relaxed">{cap.desc}</p>
                 </div>
               </FadeIn>
@@ -236,12 +236,12 @@ export function Landing() {
           {/* Investigation Preview */}
           <FadeIn className="space-y-8">
             <div>
-              <h2 className="text-3xl font-bold text-slate-100 mb-4">Investigation Preview</h2>
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-cyan-400 to-blue-500 pb-2 mb-4">Investigation Preview</h2>
               <p className="text-sm text-slate-400 leading-relaxed">Experience a fully reconstructed investigation case showing correlated network data and forensic findings.</p>
             </div>
             
-            <div className="glass-panel p-6 border-slate-700 hover:border-cyan-800 transition-colors cursor-default relative overflow-hidden group rounded-3xl">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-bl-full pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+            <div className="glass-panel p-6 border-slate-700 hover:border-cyan-800 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] active:scale-[0.98] cursor-pointer transition-all duration-300 relative overflow-hidden group rounded-3xl" onClick={() => navigate('/investigations/CASE-2026-0017')}>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-bl-full pointer-events-none group-hover:bg-cyan-500/20 group-hover:scale-110 transition-all duration-500"></div>
               
               <div className="flex justify-between items-start mb-6">
                 <div>
@@ -285,7 +285,7 @@ export function Landing() {
           {/* AI Section */}
           <FadeIn delay={200} className="space-y-8">
             <div>
-              <h2 className="text-3xl font-bold text-slate-100 mb-4">AI-Assisted Investigation</h2>
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-cyan-400 to-blue-500 pb-2 mb-4">AI-Assisted Investigation</h2>
               <p className="text-sm text-slate-400 leading-relaxed">Query your evidence directly. The AI assistant contextualizes network activity and helps accelerate analysis.</p>
             </div>
             
@@ -326,7 +326,7 @@ export function Landing() {
       {/* ===================== FINAL CTA ===================== */}
       <section className="py-20 lg:py-24 border-t border-slate-800 bg-gradient-to-t from-navy-900 to-navy-950">
         <FadeIn className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-100 mb-6 tracking-tight">Turn Network Traffic <br className="hidden sm:block"/>Into Investigable Evidence.</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-cyan-400 to-blue-500 pb-2 mb-6 tracking-tight">Turn Network Traffic <br className="hidden sm:block"/>Into Investigable Evidence.</h2>
           <p className="text-lg text-slate-400 mb-10">Explore the NetSleuth AI forensic workflow.</p>
           <button 
             onClick={() => navigate('/dashboard')}
