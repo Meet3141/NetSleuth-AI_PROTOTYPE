@@ -11,6 +11,16 @@ export interface Finding {
   severity: Severity;
   confidence: Confidence;
   status: FindingStatus;
+  description?: string;
+  category?: string;
+  mitreTechnique?: string;
+  detectionMethods?: string[];
+  relatedFlows?: string[];
+  relatedSessions?: string[];
+  relatedArtifacts?: string[];
+  relatedIOCs?: string[];
+  riskScore?: number;
+  explanation?: string;
 }
 
 export interface Case {
@@ -125,4 +135,54 @@ export interface ExtractedArtifact {
   type: string;
   size: string;
   hash: string;
+}
+
+// --- Step 3 Types ---
+
+export interface Alert {
+  id: string;
+  time: string;
+  title: string;
+  severity: Severity;
+  confidence: Confidence;
+  source: string;
+  status: FindingStatus | string;
+  groupedCount?: number;
+}
+
+export interface ThreatIntelRecord {
+  indicator: string;
+  type: string;
+  reputation: string;
+  source: string;
+  firstSeen: string;
+  lastSeen: string;
+  relatedSessions: number;
+}
+
+export interface CorrelationNode {
+  id: string;
+  type: 'Host' | 'Session' | 'Domain' | 'IP' | 'Finding' | 'Artifact';
+  label: string;
+  subLabel?: string;
+  status?: string;
+}
+
+export interface CorrelationEdge {
+  id: string;
+  source: string;
+  target: string;
+  label?: string;
+}
+
+export interface TimelineEvent {
+  id: string;
+  time: string;
+  description: string;
+  type: string;
+}
+
+export interface AttackChainStep {
+  id: string;
+  label: string;
 }

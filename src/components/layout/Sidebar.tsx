@@ -37,6 +37,8 @@ export function Sidebar() {
       title: 'DETECTION',
       items: [
         { name: 'Detections', path: '/detections', icon: <ShieldAlert size={18} /> },
+        { name: 'Alerts', path: '/alerts', icon: <Activity size={18} /> },
+        { name: 'Threat Intelligence', path: '/threat-intelligence', icon: <Network size={18} /> },
         { name: 'Correlation', path: '/correlation', icon: <Network size={18} /> },
       ]
     },

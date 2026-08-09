@@ -3,6 +3,11 @@ import { AppLayout } from './components/layout/AppLayout';
 import { Dashboard } from './pages/Dashboard';
 import { PcapInput } from './pages/PcapInput';
 import { PacketIntelligence } from './pages/PacketIntelligence';
+import { Detections } from './pages/Detections';
+import { FindingDetail } from './pages/FindingDetail';
+import { Alerts } from './pages/Alerts';
+import { ThreatIntelligence } from './pages/ThreatIntelligence';
+import { Correlation } from './pages/Correlation';
 import { PlaceholderPage } from './pages/PlaceholderPage';
 
 function App() {
@@ -19,9 +24,11 @@ function App() {
           <Route path="/packet-intelligence" element={<PacketIntelligence />} />
           
           {/* Detection */}
-          <Route path="/detections" element={<PlaceholderPage title="Detections" />} />
-          <Route path="/detections/:id" element={<PlaceholderPage title="Detection Details" />} />
-          <Route path="/correlation" element={<PlaceholderPage title="Correlation" />} />
+          <Route path="/detections" element={<Detections />} />
+          <Route path="/detections/:id" element={<FindingDetail />} />
+          <Route path="/alerts" element={<Alerts />} />
+          <Route path="/threat-intelligence" element={<ThreatIntelligence />} />
+          <Route path="/correlation" element={<Correlation />} />
           
           {/* Investigation */}
           <Route path="/investigations" element={<PlaceholderPage title="Investigations" />} />
