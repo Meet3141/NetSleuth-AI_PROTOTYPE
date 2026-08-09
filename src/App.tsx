@@ -11,6 +11,9 @@ import { Correlation } from './pages/Correlation';
 import { Investigations } from './pages/Investigations';
 import { InvestigationWorkspace } from './pages/InvestigationWorkspace';
 import { Evidence } from './pages/Evidence';
+import { Mitre } from './pages/Mitre';
+import { Reports } from './pages/Reports';
+import { Settings } from './pages/Settings';
 import { PlaceholderPage } from './pages/PlaceholderPage';
 
 function App() {
@@ -37,11 +40,11 @@ function App() {
           <Route path="/investigations" element={<Investigations />} />
           <Route path="/investigations/:id" element={<InvestigationWorkspace />} />
           <Route path="/evidence" element={<Evidence />} />
-          <Route path="/mitre" element={<PlaceholderPage title="MITRE ATT&CK" />} />
-          <Route path="/reports" element={<PlaceholderPage title="Reports" />} />
+          <Route path="/mitre" element={<Mitre />} />
+          <Route path="/reports" element={<Reports />} />
           
           {/* System */}
-          <Route path="/settings" element={<PlaceholderPage title="Settings" />} />
+          <Route path="/settings" element={<Settings />} />
           
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/dashboard" replace />} />

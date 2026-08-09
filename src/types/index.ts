@@ -253,3 +253,24 @@ export interface EvidencePackage {
   status: string;
   items: EvidenceItem[];
 }
+
+// --- Step 5 Types ---
+
+export interface MitreMapping {
+  id: string;
+  tactic: string;
+  technique: string;
+  techniqueId: string;
+  relatedFindingId: string;
+  timelineEventTime: string;
+  confidence: string;
+}
+
+export interface ForensicReport {
+  id: string;
+  caseId: string;
+  title: string;
+  created: string;
+  status: string;
+  format: string;
+}

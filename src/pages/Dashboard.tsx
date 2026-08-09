@@ -68,10 +68,18 @@ export function Dashboard() {
 
   return (
     <div className="space-y-6 pb-6">
-      <PageHeader 
-        title="Network Forensics Overview" 
-        subtitle="Monitor, investigate and preserve network evidence."
-      />
+      <div className="flex justify-between items-start">
+        <PageHeader 
+          title="Network Forensics Overview" 
+          subtitle="Monitor, investigate and preserve network evidence."
+        />
+        <button 
+          onClick={() => navigate('/input')}
+          className="flex items-center gap-2 text-sm font-bold text-cyan-950 bg-cyan-500 hover:bg-cyan-400 px-4 py-2 rounded transition-colors shadow-[0_0_15px_rgba(6,182,212,0.3)] mt-2 uppercase tracking-wider"
+        >
+          Run Demo Investigation <ArrowRight size={16} />
+        </button>
+      </div>
 
       {/* Metrics Row */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

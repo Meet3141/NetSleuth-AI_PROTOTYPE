@@ -7,10 +7,10 @@ import { WorkflowSteps } from '../components/common/WorkflowSteps';
 import { pcapService } from '../services/pcapService';
 import { ProcessingStep, PcapFileInfo } from '../types';
 import { FileSearch, Play } from 'lucide-react';
+import { cn } from '../lib/utils';
 
 export function PcapInput() {
   const navigate = useNavigate();
-  const [file, setFile] = useState<File | null>(null);
   const [fileInfo, setFileInfo] = useState<PcapFileInfo | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [steps, setSteps] = useState<ProcessingStep[]>([]);
@@ -22,7 +22,6 @@ export function PcapInput() {
 
   const handleFileSelect = (selectedFile: File | null) => {
     if (!selectedFile) return;
-    setFile(selectedFile);
     
     // Simulate parsing file info
     setFileInfo({
