@@ -28,7 +28,7 @@ export function PipelineStage({ data, isLast }: PipelineStageProps) {
 
       {/* Card */}
       <div
-        className="flex-1 bg-navy-950/80 backdrop-blur-sm border border-slate-700/60 rounded-xl p-5 shadow-[0_8px_24px_rgba(0,0,0,0.4)] group-hover:border-cyan-500/40 group-hover:shadow-[0_8px_24px_rgba(6,182,212,0.1)] transition-all duration-300 relative overflow-hidden"
+        className="flex-1 bg-navy-950/80 backdrop-blur-sm border border-slate-700/60 rounded-xl p-4 shadow-[0_8px_24px_rgba(0,0,0,0.4)] group-hover:border-cyan-500/40 group-hover:shadow-[0_8px_24px_rgba(6,182,212,0.1)] transition-all duration-300 relative overflow-hidden"
         style={{
           transform: 'perspective(800px) rotateX(1deg) rotateY(-1deg)',
         }}
@@ -37,8 +37,8 @@ export function PipelineStage({ data, isLast }: PipelineStageProps) {
         <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
 
         <div className="flex items-center gap-3 mb-1">
-          <div className="w-9 h-9 rounded-lg bg-navy-900 border border-slate-700/80 flex items-center justify-center shadow-inner group-hover:border-cyan-500/40 transition-colors shrink-0">
-            <Icon size={16} className="text-cyan-400 drop-shadow-[0_0_6px_rgba(6,182,212,0.6)]" />
+          <div className="w-8 h-8 rounded-lg bg-navy-900 border border-slate-700/80 flex items-center justify-center shadow-inner group-hover:border-cyan-500/40 transition-colors shrink-0">
+            <Icon size={14} className="text-cyan-400 drop-shadow-[0_0_6px_rgba(6,182,212,0.6)]" />
           </div>
           <div>
             <h3 className="text-xs font-bold text-slate-100 uppercase tracking-widest leading-tight">
