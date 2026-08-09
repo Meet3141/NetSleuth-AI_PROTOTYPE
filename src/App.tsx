@@ -15,41 +15,49 @@ import { Mitre } from './pages/Mitre';
 import { Reports } from './pages/Reports';
 import { Settings } from './pages/Settings';
 import { PlaceholderPage } from './pages/PlaceholderPage';
+import { Landing } from './pages/Landing';
 
 function App() {
   return (
     <Router>
-      <AppLayout>
-        <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          
-          {/* Traffic & Intelligence */}
-          <Route path="/traffic" element={<PlaceholderPage title="Traffic" />} />
-          <Route path="/input" element={<PcapInput />} />
-          <Route path="/packet-intelligence" element={<PacketIntelligence />} />
-          
-          {/* Detection */}
-          <Route path="/detections" element={<Detections />} />
-          <Route path="/detections/:id" element={<FindingDetail />} />
-          <Route path="/alerts" element={<Alerts />} />
-          <Route path="/threat-intelligence" element={<ThreatIntelligence />} />
-          <Route path="/correlation" element={<Correlation />} />
-          
-          {/* Investigation */}
-          <Route path="/investigations" element={<Investigations />} />
-          <Route path="/investigations/:id" element={<InvestigationWorkspace />} />
-          <Route path="/evidence" element={<Evidence />} />
-          <Route path="/mitre" element={<Mitre />} />
-          <Route path="/reports" element={<Reports />} />
-          
-          {/* System */}
-          <Route path="/settings" element={<Settings />} />
-          
-          {/* Fallback */}
-          <Route path="*" element={<Navigate to="/dashboard" replace />} />
-        </Routes>
-      </AppLayout>
+      <Routes>
+        {/* Public Landing Page */}
+        <Route path="/" element={<Landing />} />
+        
+        {/* App Workspace Wrapped in Layout */}
+        <Route path="/*" element={
+          <AppLayout>
+            <Routes>
+              <Route path="/dashboard" element={<Dashboard />} />
+              
+              {/* Traffic & Intelligence */}
+              <Route path="/traffic" element={<PlaceholderPage title="Traffic" />} />
+              <Route path="/input" element={<PcapInput />} />
+              <Route path="/packet-intelligence" element={<PacketIntelligence />} />
+              
+              {/* Detection */}
+              <Route path="/detections" element={<Detections />} />
+              <Route path="/detections/:id" element={<FindingDetail />} />
+              <Route path="/alerts" element={<Alerts />} />
+              <Route path="/threat-intelligence" element={<ThreatIntelligence />} />
+              <Route path="/correlation" element={<Correlation />} />
+              
+              {/* Investigation */}
+              <Route path="/investigations" element={<Investigations />} />
+              <Route path="/investigations/:id" element={<InvestigationWorkspace />} />
+              <Route path="/evidence" element={<Evidence />} />
+              <Route path="/mitre" element={<Mitre />} />
+              <Route path="/reports" element={<Reports />} />
+              
+              {/* System */}
+              <Route path="/settings" element={<Settings />} />
+              
+              {/* Fallback */}
+              <Route path="*" element={<Navigate to="/dashboard" replace />} />
+            </Routes>
+          </AppLayout>
+        } />
+      </Routes>
     </Router>
   );
 }
